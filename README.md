@@ -5,4 +5,7 @@ I have bundled sample flex app provided by sfapi team, into a war file which you
 
 Run the test using `mvn clean install -Pui-test`
 
+Source for FlexWebDriver class:
+http://www.blackpepper.co.uk/driving-a-flex-application-via-selenium-2-webdriver/
+
 

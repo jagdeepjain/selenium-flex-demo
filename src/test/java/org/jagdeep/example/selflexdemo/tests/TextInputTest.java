@@ -14,7 +14,7 @@ public class TextInputTest extends TestConfig {
 	private String expected;
 	private String actual;
     
-    @Test(groups = "text-input")
+    @Test
     public void testTextInput() throws Exception {
     	expected = "The result is 1";
     	textInput.setNumber("1");
