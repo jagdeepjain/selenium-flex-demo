@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SuiteFlexUI" verbose="1">
-	<test name="Multiplication">
+	<test name="FlexUITest">
 		<classes>
-			<class name="org.jagdeep.example.selflexdemo.tests.TextInputTest" />
+			<class name="org.jagdeep.example.selflexdemo.tests.FlexUITest" />
 		</classes>
 
 	</test>

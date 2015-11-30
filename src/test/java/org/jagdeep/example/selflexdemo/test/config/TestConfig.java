@@ -9,12 +9,12 @@ public class TestConfig {
 
 	TextInput textInput = new TextInput();
     
-	@BeforeTest
+	@BeforeTest(groups = "flex-ui-test")
     public void setUp() throws Exception {
 		textInput.openFlexApp();
     }
     
-    @AfterTest
+    @AfterTest(groups = "flex-ui-test")
     public void tearDown() {
     	textInput.closeFlexApp();
     }
