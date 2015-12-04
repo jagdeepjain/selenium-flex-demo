@@ -28,7 +28,7 @@ public class FlexUITest extends TestConfig {
 	private String expected;
 	private String actual;
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "text-input")
 	public void testTextInput() throws Exception {
 		Util.sleep(1000);
 		expected = "The result is 1";
@@ -37,8 +37,38 @@ public class FlexUITest extends TestConfig {
 		actual = textInput.getResults();
 		assertEquals(expected, actual);
 	}
+	
+	@Test(groups = "text-input")
+	public void testTextInputNegativeNumber() throws Exception {
+		Util.sleep(1000);
+		expected = "The result is 1";
+		textInput.setNumber("-1");
+		textInput.setFactor("-1");
+		actual = textInput.getResults();
+		assertEquals(expected, actual);
+	}
+	
+	@Test(groups = "text-input")
+	public void testTextInputZero() throws Exception {
+		Util.sleep(1000);
+		expected = "The result is 0";
+		textInput.setNumber("0");
+		textInput.setFactor("-1");
+		actual = textInput.getResults();
+		assertEquals(expected, actual);
+	}
+	
+	@Test(groups = "text-input")
+	public void testTextInputPveNve() throws Exception {
+		Util.sleep(1000);
+		expected = "The result is -1";
+		textInput.setNumber("+1");
+		textInput.setFactor("-1");
+		actual = textInput.getResults();
+		assertEquals(expected, actual);
+	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "button")
 	public void testPush() throws Exception {
 		Util.sleep(1000);
 		expected = "pushed 1 time";
@@ -47,7 +77,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "checkbox")
 	public void testCheckBoxChecked() throws Exception {
 		Util.sleep(1000);
 		expected = "checked";
@@ -56,7 +86,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "checkbox")
 	public void testCheckBoxUnChecked() throws Exception {
 		Util.sleep(1000);
 		expected = "not checked";
@@ -65,7 +95,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "dropdown")
 	public void testSelectGrape() throws Exception {
 		Util.sleep(1000);
 		expected = "grapes are purple";
@@ -74,7 +104,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "dropdown")
 	public void testSelectBanana() throws Exception {
 		Util.sleep(1000);
 		expected = "bananas are yellow";
@@ -83,7 +113,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "dropdown")
 	public void testSelectApple() throws Exception {
 		Util.sleep(1000);
 		expected = "apples are green";
@@ -92,7 +122,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "date-picker")
 	public void testDate() throws Exception {
 		Util.sleep(1000);
 		String expected = "you chose 1/12/2015";
@@ -101,7 +131,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "grid")
 	public void testGridLabel() throws Exception {
 		Util.sleep(1000);
 		String expected = "Choose more fruit";
@@ -109,7 +139,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "tabs")
 	public void testFruitTab() throws Exception {
 		Util.sleep(1000);
 		String expected = "fruit";
@@ -118,7 +148,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "tabs")
 	public void testVeg() throws Exception {
 		Util.sleep(1000);
 		String expected = "veg";
@@ -127,7 +157,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "tabs")
 	public void testCheese() throws Exception {
 		Util.sleep(1000);
 		String expected = "Choose cheese";
@@ -136,7 +166,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "tabs")
 	public void testPinkLadyOption() throws Exception {
 		Util.sleep(1000);
 		String expected = "Pink Lady";
@@ -150,7 +180,7 @@ public class FlexUITest extends TestConfig {
 		assertEquals("" + expected, "" + actual);
 	}
 
-	@Test(groups = "flex-ui-test")
+	@Test(groups = "tabs")
 	public void testCoxOption() throws Exception {
 		Util.sleep(1000);
 		String expected = "Cox's Orange Pippin";

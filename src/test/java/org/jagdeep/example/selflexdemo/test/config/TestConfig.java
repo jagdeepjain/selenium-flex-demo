@@ -8,15 +8,15 @@ import org.jagdeep.example.selflexdemo.TextInput;
 public class TestConfig {
 
 	TextInput textInput = new TextInput();
-    
-	@BeforeTest(groups = "flex-ui-test")
-    public void setUp() throws Exception {
+
+	@BeforeTest(groups = { "test-input", "button", "checkbox", "dropdown", "date-picker", "grid", "tabs" })
+	public void setUp() throws Exception {
 		textInput.openFlexApp();
-    }
-    
-    @AfterTest(groups = "flex-ui-test")
-    public void tearDown() {
-    	textInput.closeFlexApp();
-    }
-   
+	}
+
+	@AfterTest(groups = { "test-input", "button", "checkbox", "dropdown", "date-picker", "grid", "tabs" })
+	public void tearDown() {
+		textInput.closeFlexApp();
+	}
+
 }
