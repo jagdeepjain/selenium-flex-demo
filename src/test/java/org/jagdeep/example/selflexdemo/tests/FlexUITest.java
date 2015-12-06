@@ -4,66 +4,22 @@ import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-import org.jagdeep.example.selflexdemo.CheckBox;
-import org.jagdeep.example.selflexdemo.PushButton;
-import org.jagdeep.example.selflexdemo.Tab;
-import org.jagdeep.example.selflexdemo.TextInput;
-import org.jagdeep.example.selflexdemo.DropDown;
-import org.jagdeep.example.selflexdemo.DatePicker;
-import org.jagdeep.example.selflexdemo.DataGrid;
-
+import org.jagdeep.example.selflexdemo.dataprovider.TestDataProvider;
 import org.jagdeep.example.selflexdemo.test.config.TestConfig;
+
 import org.jagdeep.example.ui.automation.util.Util;
 
 public class FlexUITest extends TestConfig {
 
-	TextInput textInput = new TextInput();
-	PushButton pushButton = new PushButton();
-	CheckBox checkBox = new CheckBox();
-	DropDown dropDown = new DropDown();
-	DatePicker datePicker = new DatePicker();
-	DataGrid dataGrid = new DataGrid();
-	Tab tab = new Tab();
-
 	private String expected;
 	private String actual;
 
-	@Test(groups = "text-input")
-	public void testTextInput() throws Exception {
+	@Test(groups = "text-input", dataProvider = "InputTextProvider", dataProviderClass = TestDataProvider.class)
+	public void testTextInput(String number, String factor) throws Exception {
 		Util.sleep(1000);
-		expected = "The result is 1";
-		textInput.setNumber("1");
-		textInput.setFactor("1");
-		actual = textInput.getResults();
-		assertEquals(expected, actual);
-	}
-	
-	@Test(groups = "text-input")
-	public void testTextInputNegativeNumber() throws Exception {
-		Util.sleep(1000);
-		expected = "The result is 1";
-		textInput.setNumber("-1");
-		textInput.setFactor("-1");
-		actual = textInput.getResults();
-		assertEquals(expected, actual);
-	}
-	
-	@Test(groups = "text-input")
-	public void testTextInputZero() throws Exception {
-		Util.sleep(1000);
-		expected = "The result is 0";
-		textInput.setNumber("0");
-		textInput.setFactor("-1");
-		actual = textInput.getResults();
-		assertEquals(expected, actual);
-	}
-	
-	@Test(groups = "text-input")
-	public void testTextInputPveNve() throws Exception {
-		Util.sleep(1000);
-		expected = "The result is -1";
-		textInput.setNumber("+1");
-		textInput.setFactor("-1");
+		expected = "The result is " + (Integer.valueOf(number) * Integer.valueOf(factor));
+		textInput.setNumber(number);
+		textInput.setFactor(factor);
 		actual = textInput.getResults();
 		assertEquals(expected, actual);
 	}
@@ -95,29 +51,11 @@ public class FlexUITest extends TestConfig {
 		assertEquals(expected, actual);
 	}
 
-	@Test(groups = "dropdown")
-	public void testSelectGrape() throws Exception {
+	@Test(groups = "dropdown", dataProvider = "FruitsProvider", dataProviderClass = TestDataProvider.class)
+	public void testSelectGrape(String fruit, String color) throws Exception {
 		Util.sleep(1000);
-		expected = "grapes are purple";
-		dropDown.selectByLabel("grape");
-		actual = dropDown.getText();
-		assertEquals(expected, actual);
-	}
-
-	@Test(groups = "dropdown")
-	public void testSelectBanana() throws Exception {
-		Util.sleep(1000);
-		expected = "bananas are yellow";
-		dropDown.selectByLabel("banana");
-		actual = dropDown.getText();
-		assertEquals(expected, actual);
-	}
-
-	@Test(groups = "dropdown")
-	public void testSelectApple() throws Exception {
-		Util.sleep(1000);
-		expected = "apples are green";
-		dropDown.selectByLabel("apple");
+		expected = color;
+		dropDown.selectByLabel(fruit);
 		actual = dropDown.getText();
 		assertEquals(expected, actual);
 	}

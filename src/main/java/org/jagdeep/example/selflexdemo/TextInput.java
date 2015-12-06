@@ -12,8 +12,8 @@ public class TextInput extends SelFlexDemoAppConfig {
 		flexApp.call("doFlexType", THINK_OF_NUMBER, number);
 	}
 
-	public void setFactor(String multiplyer) {
-		flexApp.call("doFlexType", FACTOR, multiplyer);
+	public void setFactor(String factor) {
+		flexApp.call("doFlexType", FACTOR, factor);
 	}
 
 	public String getResults() {

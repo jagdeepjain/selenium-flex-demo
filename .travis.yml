@@ -1,0 +1,14 @@
+language: java
+
+before_install:  
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+
+addons:
+  coverity_scan:
+    project:
+      name: "jagdeepjain/selenium-flex-demo"
+      description: "Build submitted via Travis CI"
+    build_command_prepend: "mvn clean install -Pui-test"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: "*"
