@@ -1,8 +1,11 @@
 language: java
 
 before_install:  
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
+   - "export DISPLAY=:99.0"
+   - "sh -e /etc/init.d/xvfb start"
+   # Download and install a specific Flash Player from the Adobe Archives:
+   # http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
+   - sh getFpFromArchive.sh 'http://download.macromedia.com/pub/flashplayer/installers/archive/fp_11.7.700.225_archive.zip'
 
 env:
   global:
