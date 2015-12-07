@@ -13,4 +13,12 @@ public interface IConfig {
 	void openFlexApp();
 	
 	void closeFlexApp();
+	
+	boolean setFocus(String widgetId);
+	
+	boolean isVisible(String widgetId);
+	
+	boolean isEnable(String widgetId);
+
+	boolean exists(String widgetId);
 }

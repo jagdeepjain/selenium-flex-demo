@@ -39,4 +39,5 @@ public class FlexWebDriver {
 		}
 		return String.format("return document.%1$s.%2$s(%3$s);", flashObjectId, functionName, functionArgs);
 	}
+	
 }
