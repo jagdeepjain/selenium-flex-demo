@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="SuiteFlexUI" verbose="1">
+<suite name="SuiteFlexUI" verbose="1" parallel="methods" thread-count="1">
 	<test name="FlexUITest">
 		<classes>
 			<class name="org.jagdeep.example.selflexdemo.tests.FlexUITest" />
